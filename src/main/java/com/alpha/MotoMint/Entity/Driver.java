@@ -1,10 +1,12 @@
 package com.alpha.MotoMint.Entity;
 
 import jakarta.annotation.Generated;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 @Entity
 public class Driver {
@@ -20,8 +22,10 @@ public class Driver {
 	private String gender;
 	private String mail;
 	
-	@OneToOne
+	
+	@OneToOne(cascade = CascadeType.ALL)
 	private Vehicle vehicle;
+
 
 	@Override
 	public String toString() {
