@@ -9,5 +9,5 @@ public class MotoMintApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MotoMintApplication.class, args);
 	}
-
+ 
 }

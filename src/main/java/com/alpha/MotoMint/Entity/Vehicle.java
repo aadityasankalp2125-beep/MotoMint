@@ -1,10 +1,14 @@
 package com.alpha.MotoMint.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 
+@Entity
 public class Vehicle {
 	@Id
 	private int id;
@@ -16,10 +20,9 @@ public class Vehicle {
 	private String current_city;
 	private String avaliability_status;
 	private int PricePerKm;
-	
+
 	@OneToOne
-	 @MapsId
-	    @JoinColumn(name = "id")   // FK column in VEHICLE referencing DRIVER(id)
+	@JsonIgnore
 	private Driver driver;
 
 	@Override
@@ -125,7 +128,5 @@ public class Vehicle {
 	public void setDriver(Driver driver) {
 		this.driver = driver;
 	}
-	
-	
 
 }
