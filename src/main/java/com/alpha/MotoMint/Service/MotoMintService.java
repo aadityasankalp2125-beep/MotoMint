@@ -119,7 +119,17 @@ public Driver finddriver(long mobileno) {
 	return d;
 	
 }
+
+public String deleteDriverByMobile(long mobile) {
 	
+    Driver driver = mr.findByMobileno(mobile); 
+    if (driver != null) {
+        mr.delete(driver);
+        return "Driver deleted successfully";
+    }
+
+    return "Driver not found";
 	
+}
 
 }
