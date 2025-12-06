@@ -113,6 +113,12 @@ public String getLocation(double latitude, double longitude) {
 
 		return "Unkown";
 	}
+
+public Driver finddriver(long mobileno) {
+	Driver d=mr.findByMobileno(mobileno);
+	return d;
+	
+}
 	
 	
 
